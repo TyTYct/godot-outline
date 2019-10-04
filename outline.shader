@@ -10,7 +10,7 @@ void fragment()
 {
 	vec2 unit = (1.0/float(pixel_size) ) / vec2(textureSize(TEXTURE, 0));
 	vec4 pixel_color = texture(TEXTURE, UV);
-	if (pixel_color.a == 0.0) {
+	if (pixel_color.a <= 0.99) {
 		pixel_color = outline_color;
 		pixel_color.a = 0.0;
 		for (float x = -ceil(width); x <= ceil(width); x++) {
